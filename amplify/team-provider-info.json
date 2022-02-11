@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-nextflixcloone-dev-80321-authRole",
+      "UnauthRoleArn": "arn:aws:iam::906555195240:role/amplify-nextflixcloone-dev-80321-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::906555195240:role/amplify-nextflixcloone-dev-80321-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-nextflixcloone-dev-80321-deployment",
+      "UnauthRoleName": "amplify-nextflixcloone-dev-80321-unauthRole",
+      "StackName": "amplify-nextflixcloone-dev-80321",
+      "StackId": "arn:aws:cloudformation:us-east-1:906555195240:stack/amplify-nextflixcloone-dev-80321/64132a10-8b43-11ec-abab-0a6347925087",
+      "AmplifyAppId": "d1xprmwi4by9ad"
+    },
+    "categories": {
+      "auth": {
+        "nextflixcloone059150c7": {}
+      }
+    }
+  }
+}
