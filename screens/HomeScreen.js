@@ -25,10 +25,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingLeft: 15,
-    // paddingVertical: 20,
-    paddingTop: statusBarHeight,
+    // paddingTop: statusBarHeight,
     backgroundColor: "#000000",
-    // alignItems: "center",
-    // justifyContent: "center",
   },
 });

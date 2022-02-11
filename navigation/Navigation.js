@@ -78,6 +78,9 @@ function BottomTabNavigator() {
           title: "Home ",
           headerTitleStyle: { color: "#fff" },
           headerStyle: { backgroundColor: "#000" },
+          tabBarIcon: ({ color }) => (
+            <AntDesign name="home" size={24} color={color} />
+          ),
           headerRight: () => (
             <Pressable
               onPress={() => navigation.navigate("Modal")}

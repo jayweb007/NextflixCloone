@@ -1,15 +1,17 @@
 import React from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { StyleSheet, Text, View, Platform } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 import Navigation from "./navigation/Navigation";
+import { getStatusBarHeight } from "react-native-status-bar-height";
 
+const statusBarHeight = getStatusBarHeight();
 const App = () => {
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaProvider style={styles.container}>
       <Navigation />
       <StatusBar />
-    </SafeAreaView>
+    </SafeAreaProvider>
   );
 };
 
@@ -17,9 +19,7 @@ export default App;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    paddingTop: statusBarHeight,
     backgroundColor: "#fff",
-    // alignItems: 'center',
-    // justifyContent: 'center',
   },
 });
