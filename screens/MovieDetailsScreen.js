@@ -83,7 +83,7 @@ const MovieDetailsScreen = () => {
                   12+
                 </Text>
               </View>
-              <Text style={{ paddingHorizontal: 10 }}>
+              <Text style={{ paddingHorizontal: 10, color: "#ccc" }}>
                 {movie.numberOfSeasons} Seasons
               </Text>
               <MaterialIcons name="hd" size={24} color="white" />
@@ -135,7 +135,7 @@ const MovieDetailsScreen = () => {
                 Download
               </Text>
             </TouchableOpacity>
-            <Text>{movie.plot}</Text>
+            <Text style={{ color: "#ccc" }}>{movie.plot}</Text>
             <Text style={{ color: "gray", marginTop: 10, marginBottom: 2 }}>
               Cast: {movie.cast}...more
             </Text>
@@ -155,7 +155,7 @@ const MovieDetailsScreen = () => {
                   marginRight: 20,
                 }}
               >
-                <AntDesign name="plus" size={24} color="white" />
+                <AntDesign name="plus" size={24} color="#ccc" />
                 <Text
                   style={{
                     flexDirection: "column",
@@ -179,7 +179,7 @@ const MovieDetailsScreen = () => {
                   marginRight: 20,
                 }}
               >
-                <AntDesign name="like2" size={24} color="white" />
+                <AntDesign name="like2" size={24} color="#ccc" />
                 <Text
                   style={{
                     flexDirection: "column",
@@ -203,7 +203,7 @@ const MovieDetailsScreen = () => {
                   marginRight: 20,
                 }}
               >
-                <Ionicons name="paper-plane-outline" size={24} color="white" />
+                <Ionicons name="paper-plane-outline" size={24} color="#ccc" />
                 <Text
                   style={{
                     flexDirection: "column",
@@ -287,12 +287,14 @@ export default MovieDetailsScreen;
 const styles = StyleSheet.create({
   container: {
     // paddingTop: statusBarHeight,
+    backgroundColor: "#151515",
   },
   title: {
     fontSize: 35,
     fontWeight: "bold",
     paddingTop: 10,
     paddingBottom: 5,
+    color: "#ffffff",
   },
   image: {
     width: "100%",

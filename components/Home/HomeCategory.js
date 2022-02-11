@@ -13,11 +13,10 @@ import movie from "../../assets/data/movie";
 //
 const HomeCategory = ({ category }) => {
   const navigation = useNavigation();
-  console.log("category");
-  console.log(category);
 
-  const onMoviePress = (movie) => {};
-  console.warn("Movie Details", category.id);
+  const onMoviePress = (movie) => {
+    navigation.navigate("MovieDetailsScreen", { id: movie.id });
+  };
   return (
     <>
       <Text style={styles.title}>{category.title}</Text>

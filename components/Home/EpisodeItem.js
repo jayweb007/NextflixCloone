@@ -43,10 +43,11 @@ const EpisodeItem = ({ episode, onPress }) => {
             {episode.duration}
           </Text>
         </View>
-        <AntDesign name="download" size={24} color="white" />
+        <AntDesign name="download" size={24} color="#ccc" />
       </View>
       <Text
         style={{
+          color: "#ccc",
           paddingBottom: 5,
           borderBottomWidth: 1,
           borderBottomColor: "#222831",

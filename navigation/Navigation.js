@@ -75,10 +75,9 @@ function BottomTabNavigator() {
         component={HomeNavigator}
         options={({ navigation }) => ({
           headerShown: false,
-          title: "Home",
-          tabBarIcon: ({ color }) => (
-            <AntDesign name="home" size={24} color={color} />
-          ),
+          title: "Home ",
+          headerTitleStyle: { color: "#fff" },
+          headerStyle: { backgroundColor: "#000" },
           headerRight: () => (
             <Pressable
               onPress={() => navigation.navigate("Modal")}
@@ -147,8 +146,10 @@ function HomeNavigator() {
         name="MovieDetailsScreen"
         component={MovieDetailsScreen}
         options={({ navigation }) => ({
-          // headerShown: false,
-          title: " ",
+          //headerShown: false,
+          title: "Movie Details ",
+          headerTitleStyle: { color: "#fff" },
+          headerStyle: { backgroundColor: "#000" },
           headerRight: () => (
             <Pressable
               onPress={() => navigation.navigate("Modal")}
@@ -161,6 +162,21 @@ function HomeNavigator() {
                 size={25}
                 color="#ffffff"
                 style={{ marginRight: 15 }}
+              />
+            </Pressable>
+          ),
+          headerLeft: () => (
+            <Pressable
+              onPress={() => navigation.goBack()}
+              style={({ pressed }) => ({
+                opacity: pressed ? 0.5 : 1,
+              })}
+            >
+              <AntDesign
+                name="arrowleft"
+                size={25}
+                color="#ffffff"
+                style={{ marginLeft: 15, marginRight: 10 }}
               />
             </Pressable>
           ),
