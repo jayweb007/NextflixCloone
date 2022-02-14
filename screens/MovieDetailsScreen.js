@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { DataStore } from "aws-amplify";
-import { useRoute } from "@react-navigation/native";
+import { Picker } from "@react-native-picker/picker";
 import {
   Image,
   TouchableOpacity,
@@ -17,18 +17,18 @@ import {
   Ionicons,
   FontAwesome,
 } from "@expo/vector-icons";
+import { useRoute } from "@react-navigation/native";
 import { getStatusBarHeight } from "react-native-status-bar-height";
 import { Movie, Season, Episode } from "../src/models";
-import movie from "../assets/data/movie";
-import { Picker } from "@react-native-picker/picker";
+// import movie from "../assets/data/movie";
 import EpisodeItem from "../components/Home/EpisodeItem";
 import VideoPlayer from "../components/Home/VideoPlayer";
 
 //
 const statusBarHeight = getStatusBarHeight();
 //
-const firstSeason = movie.seasons.items[0];
-const firstEpisode = firstSeason.episodes.items[0];
+// const firstSeason = movie.seasons.items[0];
+// const firstEpisode = firstSeason.episodes.items[0];
 //
 const MovieDetailsScreen = () => {
   const [movie, setMovie] = useState(null);
@@ -41,6 +41,7 @@ const MovieDetailsScreen = () => {
 
   const route = useRoute();
 
+  //FETCHING MOVIES
   useEffect(() => {
     const fetchMovie = async () => {
       const result = await DataStore.query(Movie, route?.params?.id);
@@ -64,7 +65,6 @@ const MovieDetailsScreen = () => {
       setSeasons(movieSeasons);
       setCurrentSeason(movieSeasons[0]);
       console.log("SEASONS==", movieSeasons);
-      // console.log("SEASONS NAME==", movie.id);
     };
 
     fetchSeasons();
@@ -82,7 +82,6 @@ const MovieDetailsScreen = () => {
       );
       setEpisodes(seasonEpisodes);
       setCurrentEpisode(seasonEpisodes[0]);
-      // console.log("EPISODES", seasonEpisodes);
     };
 
     fetchEpisodes();
@@ -90,7 +89,7 @@ const MovieDetailsScreen = () => {
 
   //Page Loader
   if (!movie) {
-    return <ActivityIndicator />;
+    return <ActivityIndicator size="large" color="#000" />;
   }
 
   //
