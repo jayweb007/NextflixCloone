@@ -1,14 +1,30 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Auth } from "aws-amplify";
 
 const Downloads = () => {
+  //
+  //
+  const singOut = () => {
+    Auth.signOut();
+  };
   return (
-    <View>
-      <Text>Downloads</Text>
+    <View style={styles.container}>
+      <Pressable onPress={singOut}>
+        <Text style={{ fontSize: 20, fontWeight: "bold", fontFamily: "Arial" }}>
+          LogOut
+        </Text>
+      </Pressable>
     </View>
   );
 };
 
 export default Downloads;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});

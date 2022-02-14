@@ -72,17 +72,17 @@ export default {
           items: [
             {
               id: "episode1",
-              title: "1. New season",
+              title: "1. Marry Me",
               poster:
                 "https://expertphotography.b-cdn.net/wp-content/uploads/2020/06/diy-food-background.jpg",
-              duration: "41m",
+              duration: "51m",
               plot: "When Harvey's promotion requires him to recruit and hire a graduate of Harvard Law, he chooses Mike Ross. But Mike doesn't actualy have a law degree",
               video:
                 "https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/YSvEcxy/videoblocks-fried-fish-in-a-street-shop_byccmfitl__4f6dcd996fc95df9f594fdc1f3e6e337__P360.mp4",
             },
             {
               id: "episode2",
-              title: "2. Are you subscribed?",
+              title: "2. The God is good",
               poster:
                 "https://www.expatica.com/app/uploads/sites/5/2014/05/HERO-Coq-au-vin.jpg",
               duration: "49m",
