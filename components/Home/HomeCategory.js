@@ -2,20 +2,18 @@ import { useEffect, useState } from "react";
 import { DataStore } from "aws-amplify";
 import {
   StyleSheet,
-  Image,
-  FlatList,
-  Pressable,
   Text,
+  FlatList,
+  Image,
+  Pressable,
   View,
 } from "react-native";
-
-import { useNavigation } from "@react-navigation/native";
 import { Movie } from "../../src/models";
+import MovieItem from "./MovieItem";
 
 //
 //
 const HomeCategory = ({ category }) => {
-  const navigation = useNavigation();
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -24,15 +22,11 @@ const HomeCategory = ({ category }) => {
         (c) => c?.category?.id === category?.id
       );
       setMovies(result);
-      console.log(result);
+      // console.log(result);
     };
 
     fetchMovies();
   }, []);
-
-  const onMoviePress = (movie) => {
-    navigation.navigate("MovieDetailsScreen", { id: movie?.id });
-  };
 
   ///
   return (
@@ -42,11 +36,7 @@ const HomeCategory = ({ category }) => {
         data={movies}
         horizontal
         showsHorizontalScrollIndicator={false}
-        renderItem={({ item }) => (
-          <Pressable onPress={() => onMoviePress(item)}>
-            <Image style={styles.image} source={{ uri: item.poster }} />
-          </Pressable>
-        )}
+        renderItem={({ item }) => <MovieItem movie={item} />}
       />
     </>
   );
@@ -60,12 +50,5 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#ffffff",
     paddingTop: 15,
-  },
-  image: {
-    width: 150,
-    height: 200,
-    resizeMode: "cover",
-    borderRadius: 5,
-    margin: 5,
   },
 });

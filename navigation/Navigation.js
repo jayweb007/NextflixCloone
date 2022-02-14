@@ -150,7 +150,7 @@ function HomeNavigator() {
         component={MovieDetailsScreen}
         options={({ navigation }) => ({
           //headerShown: false,
-          title: "Movie Details ",
+          title: " ",
           headerTitleStyle: { color: "#fff" },
           headerStyle: { backgroundColor: "#000" },
           headerRight: () => (

@@ -64,7 +64,7 @@ const MovieDetailsScreen = () => {
       );
       setSeasons(movieSeasons);
       setCurrentSeason(movieSeasons[0]);
-      console.log("SEASONS==", movieSeasons);
+      // console.log("SEASONS==", movieSeasons);
     };
 
     fetchSeasons();
